@@ -1,6 +1,7 @@
 # tasks/
 
-Code changes go through `ratchetloop run`.
+Code changes go through `ratchetloop run`. The pipeline itself is
+described in `docs/RATCHETLOOP.md`.
 
     ~/opt/ratchetloop/current/deploy/ratchetloop run tasks/<task_key>.yaml --detach \
         --policy /home/tespy/opt/ratchetloop/current/WORKFLOW.md

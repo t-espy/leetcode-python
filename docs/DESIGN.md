@@ -37,4 +37,6 @@ LeetCode HTML markers.
 
 `ratchetloop run` writes code on `ratchetloop/<task_key>`. A person merges
 and pushes. The pipeline does not talk to LeetCode. Briefs name the prompt
-files and the tests that must go green.
+files and the tests that must go green. The full description of the
+pipeline, its commands, task file, dispositions, and how this repo calls
+it is `docs/RATCHETLOOP.md`.

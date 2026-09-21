@@ -29,6 +29,7 @@ PYTHONPATH=src venv/bin/python -m leetcode_python list
 - `answers/` — Python modules
 - `docs/solutions/` — writeups
 - `tasks/` — ratchetloop task files
+- `docs/RATCHETLOOP.md` — full description of the pipeline that writes the code
 
 ## Legal fence
 
