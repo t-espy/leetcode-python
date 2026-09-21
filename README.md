@@ -40,9 +40,9 @@ This is intentionally a representative work sample rather than an attempt to com
 
 | Set | Total | Premium excluded | Completed |
 | --- | ---: | ---: | ---: |
-| Blind 75 | 75 | 6 | 5 |
+| Blind 75 | 75 | 6 | 10 |
 
-The selected problems are intended to cover distinct algorithmic patterns rather than maximize raw solution count.
+The selected problems cover arrays, graph traversal, tree recursion, sliding windows, dynamic programming, and heaps.
 
 ## Setup
 

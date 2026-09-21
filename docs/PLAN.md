@@ -12,8 +12,10 @@ Spend cap for this first build: about $40 of measured ratchetloop cost.
 5. Full `pytest -q` is green.
 6. Nothing in git is a copied LeetCode statement.
 
-First slice (2026-09-21): items 1–5 are on `main`. Remaining free rows
-are later `ratchetloop run` batches.
+First slice (2026-09-21): five Array answers on `main`.
+Batch 2: Number of Islands, Validate BST, Longest Substring Without
+Repeating Characters, Coin Change, Top K Frequent Elements.
+Remaining free rows are later `ratchetloop run` batches.
 
 ## Stages
 
