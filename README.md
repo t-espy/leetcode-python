@@ -34,15 +34,20 @@ The full ratchetloop workflow, controls, task format, review loop, and run recor
 
 Solved implementations are checked against deterministic reference implementations using fixed edge cases and seeded generated inputs. GitHub Actions runs the full pytest suite on Python 3.12 for every push and pull request.
 
-## Status
+## Representative coverage
 
-This is intentionally a representative work sample rather than an attempt to complete every available Blind 75 problem.
+Ten intentionally selected problems are implemented. The goal is representative coverage of common interview algorithm patterns, not completion of the full Blind 75 set. Six premium Blind 75 problems remain excluded.
 
-| Set | Total | Premium excluded | Completed |
-| --- | ---: | ---: | ---: |
-| Blind 75 | 75 | 6 | 10 |
-
-The selected problems cover arrays, graph traversal, tree recursion, sliding windows, dynamic programming, and heaps.
+| Pattern | Representative problem |
+| --- | --- |
+| Hashing | Two Sum; Contains Duplicate |
+| Linear state | Best Time to Buy and Sell Stock |
+| Prefix / suffix | Product of Array Except Self |
+| Dynamic programming | Maximum Subarray; Coin Change |
+| Sliding window | Longest Substring Without Repeating Characters |
+| Graph traversal | Number of Islands |
+| Tree recursion | Validate Binary Search Tree |
+| Heap / frequency | Top K Frequent Elements |
 
 ## Setup
 
