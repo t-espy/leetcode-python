@@ -2,16 +2,16 @@ from __future__ import annotations
 
 import os
 import subprocess
+import sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
-PYTHON = ROOT / "venv" / "bin" / "python"
 ENV = {**os.environ, "PYTHONPATH": str(ROOT / "src")}
 
 
 def _run(command: str) -> subprocess.CompletedProcess[str]:
     return subprocess.run(
-        [str(PYTHON), "-m", "leetcode_python", command],
+        [sys.executable, "-m", "leetcode_python", command],
         cwd=ROOT,
         env=ENV,
         capture_output=True,
