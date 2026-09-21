@@ -39,4 +39,5 @@ LeetCode HTML markers.
 and pushes. The pipeline does not talk to LeetCode. Briefs name the prompt
 files and the tests that must go green. The full description of the
 pipeline, its commands, task file, dispositions, and how this repo calls
-it is `docs/RATCHETLOOP.md`.
+it is `docs/RATCHETLOOP.md`. The pipeline itself is
+[ratchetloop-public](https://github.com/t-espy/ratchetloop-public).

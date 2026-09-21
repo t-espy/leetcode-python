@@ -1,16 +1,16 @@
 # ratchetloop
 
-This project’s code is written by **ratchetloop**, a local command-line
-pipeline (pin `~/opt/ratchetloop/current`, source `~/projects/ratchetloop`).
-A task file or an idea paragraph goes in; a coding agent changes an isolated
-git worktree; deterministic checks run; a second agent from a different
-model family reviews the diff. The output is a git branch, a disposition,
-and a run directory. A person merges, pushes, and deploys.
+This project’s code is written by **[ratchetloop](https://github.com/t-espy/ratchetloop-public)**,
+a local command-line pipeline. A task file or an idea paragraph goes in; a
+coding agent changes an isolated git worktree; deterministic checks run; a
+second agent from a different model family reviews the diff. The output is a
+git branch, a disposition, and a run directory. A person merges, pushes, and
+deploys.
 
-Authority for the shapes below is the pinned runtime’s
-`docs/CONTRACT.md` at `~/opt/ratchetloop/current`. Callers use
-`docs/CALLERS.md`. This page is the description that lives with
-leetcode-python.
+The pipeline source, contract, and design are in
+[t-espy/ratchetloop-public](https://github.com/t-espy/ratchetloop-public).
+This page is how leetcode-python calls it (local pin
+`~/opt/ratchetloop/current`).
 
 ## Product
 

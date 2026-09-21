@@ -8,7 +8,7 @@ Each completed problem includes an original Python implementation, focused unit 
 
 ## Development and validation
 
-The implementations are produced through **ratchetloop**, an AI-assisted software-development pipeline that I also designed and built. Ratchetloop takes a bounded task or design, gives it to a coding agent in an isolated git worktree, runs deterministic checks, and sends the resulting diff to an independent reviewer from a different model family. A human controls merge and publication.
+The implementations are produced through **[ratchetloop](https://github.com/t-espy/ratchetloop-public)**, an AI-assisted software-development pipeline that I also designed and built. Ratchetloop takes a bounded task or design, gives it to a coding agent in an isolated git worktree, runs deterministic checks, and sends the resulting diff to an independent reviewer from a different model family. A human controls merge and publication.
 
 For this repository, the workflow is:
 
@@ -30,7 +30,7 @@ human merge
 GitHub Actions
 ```
 
-The full ratchetloop workflow, controls, task format, review loop, and run records are documented in [docs/RATCHETLOOP.md](docs/RATCHETLOOP.md).
+The pipeline source, contract, and design live in [ratchetloop-public](https://github.com/t-espy/ratchetloop-public). How this repository calls it is documented in [docs/RATCHETLOOP.md](docs/RATCHETLOOP.md).
 
 Solved implementations are checked against deterministic reference implementations using fixed edge cases and seeded generated inputs. GitHub Actions runs the full pytest suite on Python 3.12 for every push and pull request.
 
@@ -67,7 +67,7 @@ PYTHONPATH=src venv/bin/python -m leetcode_python list
 - `tests/test_oracles.py` and `tests/oracles.py` — deterministic reference-oracle validation
 - `docs/solutions/` — algorithm and complexity writeups
 - `tasks/` — ratchetloop task definitions
-- `docs/RATCHETLOOP.md` — ratchetloop architecture and workflow used to produce the code
+- `docs/RATCHETLOOP.md` — how this repository calls [ratchetloop](https://github.com/t-espy/ratchetloop-public)
 
 ## Legal fence
 

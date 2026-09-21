@@ -1,7 +1,8 @@
 # tasks/
 
-Code changes go through `ratchetloop run`. The pipeline itself is
-described in `docs/RATCHETLOOP.md`.
+Code changes go through `ratchetloop run`. The pipeline source is
+[ratchetloop-public](https://github.com/t-espy/ratchetloop-public). How
+this repository calls it is `docs/RATCHETLOOP.md`.
 
     ~/opt/ratchetloop/current/deploy/ratchetloop run tasks/<task_key>.yaml --detach \
         --policy /home/tespy/opt/ratchetloop/current/WORKFLOW.md
