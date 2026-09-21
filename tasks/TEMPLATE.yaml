@@ -1,0 +1,40 @@
+# Copy to tasks/<task_key>.yaml, fill in, then:
+#   ~/opt/ratchetloop/current/deploy/ratchetloop run tasks/<task_key>.yaml --detach \
+#       --policy /home/tespy/opt/ratchetloop/current/WORKFLOW.md
+
+task_key: next-batch
+repo: /home/tespy/projects/leetcode-python
+base_branch: main
+coder: grok
+reviewer: claude
+tier: standard
+max_review_rounds: 1
+cost_budget_usd: 20
+wall_budget_s: 5400
+
+setup:
+  - "ln -s /home/tespy/projects/leetcode-python/venv venv"
+
+env:
+  PYTHONPATH: src
+
+checks:
+  - "venv/bin/python -m pytest -q"
+
+allowed_paths:
+  - answers/
+  - docs/solutions/
+  - catalog/blind75.json
+  - prompts/
+  - tests/problems/
+
+objective: >-
+  Next five free Blind 75 problems. Original prompts, original tests,
+  original answers, original writeups. Legal fence in
+  research/TOS_AND_COPYRIGHT.md.
+
+acceptance_criteria:
+  - "The new tests/problems files pass."
+  - "Matching writeups exist."
+  - "Those catalog rows are status solved; premium rows stay skipped."
+  - "Full pytest -q is green."

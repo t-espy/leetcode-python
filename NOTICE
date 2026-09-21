@@ -1,0 +1,16 @@
+# NOTICE
+
+This repository is original software: a catalog of public problem identifiers,
+original Python solutions, original tests, and original writeups.
+
+LeetCode is a trademark of LeetCode. This project is not affiliated with,
+endorsed by, or sponsored by LeetCode.
+
+Problem titles, numeric identifiers, URL slugs, difficulty labels, and
+category names are factual identifiers used to link to the corresponding
+page on leetcode.com. This repository does not copy LeetCode problem
+statements, examples, constraints, editorials, hidden tests, or premium
+content.
+
+Solutions and documentation here are original works of their authors and
+are licensed under the MIT License (see LICENSE).

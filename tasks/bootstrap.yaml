@@ -1,0 +1,48 @@
+task_key: bootstrap
+repo: /home/tespy/projects/leetcode-python
+base_branch: main
+coder: grok
+reviewer: claude
+tier: light
+max_review_rounds: 1
+cost_budget_usd: 12
+wall_budget_s: 3600
+
+setup:
+  - "ln -s /home/tespy/projects/leetcode-python/venv venv"
+
+env:
+  PYTHONPATH: src
+
+checks:
+  - "venv/bin/python -m pytest -q tests/test_catalog.py tests/test_hygiene.py tests/test_cli.py"
+  - "venv/bin/python -m leetcode_python list"
+  - "venv/bin/python -m leetcode_python status"
+
+allowed_paths:
+  - src/
+  - tests/test_cli.py
+
+objective: >-
+  Implement the catalog CLI and loaders for leetcode-python. Read
+  docs/DESIGN.md, docs/PLAN.md, and research/TOS_AND_COPYRIGHT.md.
+  Product is Python 3.12 stdlib, PYTHONPATH=src, files under 400 lines.
+  Load catalog/blind75.json with the identifier keys already tested in
+  tests/test_catalog.py. python -m leetcode_python list prints every row:
+  id, slug, difficulty, paid_only, status. python -m leetcode_python status
+  prints counts of pending, solved, and skipped_premium (6 skipped, 69
+  pending, 0 solved on this seed). Add tests/test_cli.py that runs those
+  two commands via subprocess against the worktree and checks the counts.
+  Provide src/leetcode_python/load.py with load_answer(stem) that loads
+  answers/<stem>.py (used later). Do not fetch any URL. Do not add
+  statement fields to the catalog. Do not write answers or solution docs.
+  Do not change catalog/blind75.json. Do not import requests, httpx, or
+  urllib.request in product code.
+
+acceptance_criteria:
+  - "python -m leetcode_python list exits 0 and prints 75 lines of problem rows."
+  - "python -m leetcode_python status reports skipped_premium=6, pending=69, solved=0."
+  - "tests/test_cli.py covers list and status."
+  - "No module under src/ opens a network socket or imports an HTTP client."
+  - "catalog/blind75.json is unchanged."
+  - "The catalog and hygiene tests still pass."

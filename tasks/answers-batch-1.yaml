@@ -1,0 +1,48 @@
+task_key: answers-batch-1
+repo: /home/tespy/projects/leetcode-python
+base_branch: main
+coder: grok
+reviewer: claude
+tier: standard
+max_review_rounds: 1
+cost_budget_usd: 25
+wall_budget_s: 5400
+
+setup:
+  - "ln -s /home/tespy/projects/leetcode-python/venv venv"
+
+env:
+  PYTHONPATH: src
+
+checks:
+  - "venv/bin/python -m pytest -q"
+
+allowed_paths:
+  - answers/
+  - docs/solutions/
+  - catalog/blind75.json
+
+objective: >-
+  Write original Python solutions and original writeups for the first five
+  free Blind 75 array problems. Specs are prompts/p0001_two_sum.md,
+  prompts/p0121_best_time_to_buy_and_sell_stock.md,
+  prompts/p0217_contains_duplicate.md,
+  prompts/p0238_product_of_array_except_self.md,
+  prompts/p0053_maximum_subarray.md. Tests already live under
+  tests/problems/ and are the gate. Create the five answer modules named
+  by catalog answer_file, exposing the function names in those prompts.
+  Create five markdown writeups under docs/solutions/ with the same stems:
+  original approach, time, extra space. Set those five catalog rows to
+  status solved. Keep every other catalog row as it is. Python 3.12
+  stdlib only. Files under 400 lines. Do not fetch LeetCode. Do not paste
+  LeetCode examples, statements, or the strings "Example 1:", "Example 2:",
+  "Follow up:". Do not add catalog fields. Do not solve premium rows.
+  Do not change src/ or tests/.
+
+acceptance_criteria:
+  - "tests/problems/test_p0001_two_sum.py through test_p0053_maximum_subarray.py pass."
+  - "Five writeups exist under docs/solutions/ matching the five answer stems."
+  - "Those five catalog rows have status solved; the other 70 rows are unchanged in status."
+  - "Premium rows remain skipped_premium."
+  - "tests/test_hygiene.py passes."
+  - "Full pytest -q is green."

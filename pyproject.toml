@@ -1,0 +1,15 @@
+[project]
+name = "leetcode-python"
+version = "0.1.0"
+description = "Original Python solutions and writeups for the Blind 75 interview set."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+
+[project.optional-dependencies]
+dev = ["pytest>=8"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-p no:cacheprovider"
+pythonpath = ["src"]
