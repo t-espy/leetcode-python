@@ -1,23 +1,48 @@
-# leetcode-python
+# Python Algorithm Interview Work Sample
 
 [![CI](https://github.com/t-espy/leetcode-python/actions/workflows/ci.yml/badge.svg)](https://github.com/t-espy/leetcode-python/actions/workflows/ci.yml)
 
-Original Python solutions and writeups for the Blind 75 interview set.
-Each catalog row links to the corresponding page on leetcode.com. The
-repo holds our code, our tests, and our notes.
+This repository is a public, reproducible software-engineering work sample built around a representative subset of the Blind 75 interview curriculum. Its purpose is to demonstrate algorithmic reasoning, implementation quality, automated validation, and a modern AI-assisted development process rather than completion of every problem in the set.
 
-Solved implementations are checked against independent brute-force
-reference oracles on a seeded set of small inputs (duplicates, negatives,
-zeros, empty and singleton lists where the contract allows them).
+Each completed problem includes an original Python implementation, focused unit tests, an algorithm and complexity writeup, and deterministic validation against an independent brute-force or reference implementation where practical.
 
-LeetCode is a trademark of LeetCode. This project is independent. See
-`NOTICE` and `research/TOS_AND_COPYRIGHT.md`.
+## Development and validation
+
+The implementations are produced through **ratchetloop**, an AI-assisted software-development pipeline that I also designed and built. Ratchetloop takes a bounded task or design, gives it to a coding agent in an isolated git worktree, runs deterministic checks, and sends the resulting diff to an independent reviewer from a different model family. A human controls merge and publication.
+
+For this repository, the workflow is:
+
+```text
+problem spec
+    ↓
+AI implementation
+    ↓
+unit tests
+    ↓
+deterministic reference-oracle tests
+    ↓
+repository integrity checks
+    ↓
+independent cross-model review
+    ↓
+human merge
+    ↓
+GitHub Actions
+```
+
+The full ratchetloop workflow, controls, task format, review loop, and run records are documented in [docs/RATCHETLOOP.md](docs/RATCHETLOOP.md).
+
+Solved implementations are checked against deterministic reference implementations using fixed edge cases and seeded generated inputs. GitHub Actions runs the full pytest suite on Python 3.12 for every push and pull request.
 
 ## Status
 
-| Set | Rows | Premium skipped | Solved |
-| --- | --- | --- | --- |
+This is intentionally a representative work sample rather than an attempt to complete every available Blind 75 problem.
+
+| Set | Total | Premium excluded | Completed |
+| --- | ---: | ---: | ---: |
 | Blind 75 | 75 | 6 | 5 |
+
+The selected problems are intended to cover distinct algorithmic patterns rather than maximize raw solution count.
 
 ## Setup
 
@@ -28,19 +53,21 @@ PYTHONPATH=src venv/bin/python -m pytest -q
 PYTHONPATH=src venv/bin/python -m leetcode_python list
 ```
 
-GitHub Actions runs the same pytest suite on every push and pull request
-(Python 3.12).
-
 ## Layout
 
-- `catalog/blind75.json` — identifiers and status
-- `prompts/` — original restatements for a solve batch
-- `answers/` — Python modules
-- `docs/solutions/` — writeups
-- `tasks/` — ratchetloop task files
-- `docs/RATCHETLOOP.md` — full description of the pipeline that writes the code
+- `catalog/blind75.json` — public problem identifiers and solution status
+- `prompts/` — original problem restatements used as solve specifications
+- `answers/` — Python implementations
+- `tests/problems/` — focused unit tests
+- `tests/test_oracles.py` and `tests/oracles.py` — deterministic reference-oracle validation
+- `docs/solutions/` — algorithm and complexity writeups
+- `tasks/` — ratchetloop task definitions
+- `docs/RATCHETLOOP.md` — ratchetloop architecture and workflow used to produce the code
 
 ## Legal fence
 
-The tree does not fetch LeetCode pages, APIs, or GraphQL, and it does not
-submit code to their judge. Premium items stay skipped. Tests are original.
+LeetCode is a trademark of LeetCode. This project is independent.
+
+The repository does not fetch LeetCode pages, APIs, or GraphQL endpoints and does not submit code to LeetCode's judge. Problem statements, examples, constraints, editorials, and hidden tests are not copied into the repository. Premium items remain excluded. Tests and writeups are original.
+
+See [NOTICE](NOTICE) and [research/TOS_AND_COPYRIGHT.md](research/TOS_AND_COPYRIGHT.md).
