@@ -29,10 +29,13 @@ def test_list_prints_seventy_five_problem_rows() -> None:
     assert len(first) == 5
 
 
-def test_status_counts_seed_catalog() -> None:
+def test_status_counts_cover_the_catalog() -> None:
     proc = _run("status")
     assert proc.returncode == 0, proc.stderr
-    text = proc.stdout
-    assert "skipped_premium=6" in text
-    assert "pending=69" in text
-    assert "solved=0" in text
+    fields = dict(part.split("=", 1) for part in proc.stdout.split())
+    pending = int(fields["pending"])
+    solved = int(fields["solved"])
+    skipped = int(fields["skipped_premium"])
+    assert skipped == 6
+    assert pending + solved + skipped == 75
+    assert solved >= 5

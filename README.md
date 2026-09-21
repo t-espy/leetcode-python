@@ -11,7 +11,7 @@ LeetCode is a trademark of LeetCode. This project is independent. See
 
 | Set | Rows | Premium skipped | Solved |
 | --- | --- | --- | --- |
-| Blind 75 | 75 | 6 | 0 (first five in progress) |
+| Blind 75 | 75 | 6 | 5 |
 
 ## Setup
 

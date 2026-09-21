@@ -12,6 +12,9 @@ Spend cap for this first build: about $40 of measured ratchetloop cost.
 5. Full `pytest -q` is green.
 6. Nothing in git is a copied LeetCode statement.
 
+First slice (2026-09-21): items 1–5 are on `main`. Remaining free rows
+are later `ratchetloop run` batches.
+
 ## Stages
 
 1. **Seed (this commit).** Research, design, catalog JSON, original
