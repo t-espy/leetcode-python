@@ -190,7 +190,7 @@
       "category": "dp",
       "url": "https://leetcode.com/problems/coin-change/",
       "paid_only": false,
-      "status": "pending",
+      "status": "solved",
       "answer_file": "p0322_coin_change.py"
     },
     {
@@ -333,7 +333,7 @@
       "category": "graph",
       "url": "https://leetcode.com/problems/number-of-islands/",
       "paid_only": false,
-      "status": "pending",
+      "status": "solved",
       "answer_file": "p0200_number_of_islands.py"
     },
     {
@@ -558,7 +558,7 @@
       "category": "string",
       "url": "https://leetcode.com/problems/longest-substring-without-repeating-characters/",
       "paid_only": false,
-      "status": "pending",
+      "status": "solved",
       "answer_file": "p0003_longest_substring_without_repeating_characters.py"
     },
     {
@@ -757,7 +757,7 @@
       "category": "tree",
       "url": "https://leetcode.com/problems/validate-binary-search-tree/",
       "paid_only": false,
-      "status": "pending",
+      "status": "solved",
       "answer_file": "p0098_validate_binary_search_tree.py"
     },
     {
@@ -823,7 +823,7 @@
       "category": "heap",
       "url": "https://leetcode.com/problems/top-k-frequent-elements/",
       "paid_only": false,
-      "status": "pending",
+      "status": "solved",
       "answer_file": "p0347_top_k_frequent_elements.py"
     },
     {
