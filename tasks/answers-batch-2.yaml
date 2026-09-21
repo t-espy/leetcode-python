@@ -1,0 +1,51 @@
+task_key: answers-batch-2
+repo: /home/tespy/projects/leetcode-python
+base_branch: main
+coder: grok
+reviewer: claude
+tier: standard
+max_review_rounds: 1
+cost_budget_usd: 25
+wall_budget_s: 5400
+
+setup:
+  - "ln -s /home/tespy/projects/leetcode-python/venv venv"
+
+env:
+  PYTHONPATH: src
+
+checks:
+  - "venv/bin/python -m pytest -q"
+
+allowed_paths:
+  - answers/
+  - docs/solutions/
+  - catalog/blind75.json
+
+objective: >-
+  Write original Python solutions and original writeups for five free Blind 75
+  problems, one per category: graph traversal Number of Islands (200),
+  tree recursion Validate BST (98), sliding window Longest Substring Without
+  Repeating Characters (3), dynamic programming Coin Change (322), heap Top K
+  Frequent Elements (347). Specs are prompts/p0200_number_of_islands.md,
+  prompts/p0098_validate_binary_search_tree.md,
+  prompts/p0003_longest_substring_without_repeating_characters.md,
+  prompts/p0322_coin_change.md, prompts/p0347_top_k_frequent_elements.md.
+  Tests already live under tests/problems/ and tests/test_oracles.py and are
+  the gate. Create the five answer modules named by catalog answer_file,
+  exposing the function names (and TreeNode for 98) in those prompts. Create
+  five markdown writeups under docs/solutions/ with the same stems: original
+  approach, time, extra space. Set those five catalog rows to status solved.
+  Keep every other catalog row as it is, including the five already solved
+  array problems. Python 3.12 stdlib only. Files under 400 lines. Do not
+  fetch LeetCode. Do not paste LeetCode examples, statements, or the strings
+  "Example 1:", "Example 2:", "Follow up:". Do not add catalog fields. Do not
+  solve premium rows. Do not change src/ or tests/.
+
+acceptance_criteria:
+  - "The five new tests/problems files and the new oracle tests pass."
+  - "Five writeups exist under docs/solutions/ matching the five new answer stems."
+  - "Those five catalog rows have status solved; the previous five solved rows stay solved; the other 65 rows keep their status."
+  - "Premium rows remain skipped_premium."
+  - "tests/test_hygiene.py and tests/test_integrity.py pass."
+  - "Full pytest -q is green."
